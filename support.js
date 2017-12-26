@@ -7,6 +7,7 @@ var burst = new mojs.Burst({
   radius:   { 20: 60 },
   count: 15,
   angle:{0:30},
+
   children: {
     delay: 250,
     duration: 700,
