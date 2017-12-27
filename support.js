@@ -22,8 +22,13 @@ $("#like-cnt").click(function(){
   var t1 = new TimelineLite();
   var t2 = new TimelineLite();
 
-  $('#p-metrics').toggle('slow', function() {
+  $('#p-metrics').toggle('fast', function() {
     // Animation complete.
+  });
+
+  $('#mon-cnt').click(function(){
+    document.getElementById("mon-cnt").style.color = "#ddca7e";
+    ga('send','event','Revenue','purchase','Clicked purchase button');
   });
 
   if(!check_status){

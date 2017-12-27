@@ -1,4 +1,4 @@
-body{background: #333;}
+body{background: #222;}
 .like-container{filter: url('#filter');}
 .like-cnt{
   position: absolute;
@@ -12,6 +12,16 @@ body{background: #333;}
   line-height: 75px;
   z-index: 10;
 }
+
+#mon-cnt{
+  cursor: pointer;
+  position:absolute;
+  left:50%;
+  top:55%;
+  margin-left: -8px;
+  color: #fff;
+}
+
 .like-btn{
   color: #fff;
 }
