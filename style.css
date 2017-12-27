@@ -7,7 +7,7 @@ body{background: #333;}
   top: 50%;
   transform: translate(-50%, -50%);     background: rgba(255,255,255,0.3);     width: 60px;
   height: 60px;
-  border-radius: 50%;
+  border-radius: 40%;
   text-align: center;
   line-height: 75px;
   z-index: 10;
@@ -15,6 +15,35 @@ body{background: #333;}
 .like-btn{
   color: #fff;
 }
+
+.icon-gift{
+  font-size: 22pt;
+}
+
+.cv-btn{
+  width:379px;
+  height:52px;
+  margin-left: -183px;
+  position: absolute;
+  left:50%;
+  top: 35%;
+  background: url('cv_button_g.png') no-repeat;
+  display: inline-block;
+
+}
+
+.cv-btn:hover{
+  width:379px;
+  height:52px;
+  position: absolute;
+  left:50%;
+  top: 35%;
+  background: url('cv_button_w.png') no-repeat;
+  display: inline-block;
+}
+
+::-moz-selection { background: transparent;}
+::selection {background: transparent;}
 
 /*
 Icomoon icon-related content

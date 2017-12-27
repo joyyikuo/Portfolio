@@ -1,3 +1,4 @@
+var click_status = false;
 var check_status = false;
 var like_cnt = $("#like-cnt");
 var like_parent = $(".like-container");
@@ -20,6 +21,11 @@ var burst = new mojs.Burst({
 $("#like-cnt").click(function(){
   var t1 = new TimelineLite();
   var t2 = new TimelineLite();
+
+  $('#p-metrics').toggle('slow', function() {
+    // Animation complete.
+  });
+
   if(!check_status){
     t1.set(like_cnt, {scale:0});
     t1.set('.like-btn', {scale: 0});
@@ -27,6 +33,10 @@ $("#like-cnt").click(function(){
     t2.to('.like-btn', 0.65, {scale: 1, ease: Elastic.easeOut.config(1, 0.3)}, '+=0.2');
 //    t1.timeScale(5);
     check_status=true;
+
+//    display pirate metrics content
+    click_status=true;
+
     //circleShape.replay();
     burst.replay();
   }
