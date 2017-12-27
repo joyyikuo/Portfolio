@@ -28,7 +28,6 @@ $("#like-cnt").click(function(){
 
   $('#mon-cnt').click(function(){
     document.getElementById("mon-cnt").style.color = "#ddca7e";
-    ga('send','event','Revenue','purchase','Clicked purchase button');
   });
 
   if(!check_status){

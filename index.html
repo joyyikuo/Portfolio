@@ -24,12 +24,13 @@
 
   <div id="p-metrics" style="display:none;" class="answer_list">
     <div class="money-container">
-      <i class="mon-btn icon-coin-dollar" id="mon-cnt"></i>
+      <i class="mon-btn icon-coin-dollar" id="mon-cnt" onclick="    ga('send','event','Revenue','purchase','Clicked purchase button');"></i>
     </div>
   </div>
 
   <div class="like-container">
-    <div class="like-cnt unchecked" id="like-cnt">
+    <div class="like-cnt unchecked" id="like-cnt" onclick="ga('send','event','Acquisition','engagement','Clicked gift');
+  });">
       <i class="like-btn icon-gift"></i>
     </div>
   </div>
