@@ -40,9 +40,7 @@
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-<div id="embed-api-auth-container"></div>
 <div id="chart-container"></div>
-<div id="view-selector-container"></div>
 
   <a class="cv-btn" href="cv.html"></a>
 
@@ -73,9 +71,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
        }
      });
 
-    // Render the view selector to the page.
-    viewSelector.execute();
-
 
     /**
      * Create a new DataChart instance with the given query parameters
@@ -99,13 +94,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       }
     });
 
-
-    /**
-     * Render the dataChart on the page whenever a new view is selected.
-     */
-    viewSelector.on('change', function(ids) {
-      dataChart.set({query: {ids: ids}}).execute();
-    });
+    dataChart.execute();
 
   });
   </script>
