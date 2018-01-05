@@ -67,21 +67,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   gapi.analytics.ready(function() {
 
-    /**
-     * Authorize the user immediately if the user has already granted access.
-     * If no access has been created, render an authorize button inside the
-     * element with the ID "embed-api-auth-container".
-     */
-    gapi.analytics.auth.authorize({
-      container: 'embed-api-auth-container',
-      clientid: '793177639245-olst43lspv93vkoql0b9l26hmpf9kfmv.apps.googleusercontent.com'
-    });
-
-
-    /**
-     * Create a new ViewSelector instance to be rendered inside of an
-     * element with the id "view-selector-container".
-     */
      gapi.analytics.auth.authorize({
        'serverAuth': {
          'access_token': 'ya29.c.Elk5BW4pLv01LtCILRpS_LrWmuv8VYwpo4gmlb2F-HlDB224JcG5CU0khLpWBXhvy0Mb3golLNb4pGuRQPUsROaJcaRbQCan2MbID9LJiP1IjFR9h1_QWolV5Q'
