@@ -82,9 +82,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
      * Create a new ViewSelector instance to be rendered inside of an
      * element with the id "view-selector-container".
      */
-    var viewSelector = new gapi.analytics.ViewSelector({
-      container: 'view-selector-container'
-    });
+     gapi.analytics.auth.authorize({
+       'serverAuth': {
+         'access_token': 'ya29.c.Elk5BW4pLv01LtCILRpS_LrWmuv8VYwpo4gmlb2F-HlDB224JcG5CU0khLpWBXhvy0Mb3golLNb4pGuRQPUsROaJcaRbQCan2MbID9LJiP1IjFR9h1_QWolV5Q'
+       }
+     });
 
     // Render the view selector to the page.
     viewSelector.execute();
@@ -97,8 +99,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
      */
     var dataChart = new gapi.analytics.googleCharts.DataChart({
       query: {
-        metrics: 'ga:sessions',
-        dimensions: 'ga:date',
+        'ids': '166842679',
+        'metrics': 'ga:sessions',
+        'dimensions': 'ga:date',
         'start-date': '30daysAgo',
         'end-date': 'yesterday'
       },
