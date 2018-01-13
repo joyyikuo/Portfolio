@@ -11,7 +11,7 @@
     gtag('config', 'UA-111533283-1');
   </script>
 
-  
+
   <!-- Google Embed API -->
   <script>
   (function(w,d,s,g,js,fs){
@@ -20,7 +20,7 @@
     js.src='https://apis.google.com/js/platform.js';
     fs.parentNode.insertBefore(js,fs);js.onload=function(){g.load('analytics');};
   }(window,document,'script'));
-    
+
     gapi.analytics.ready(function() {
 
   // Authorize this user with the access token from the service account.
@@ -34,7 +34,7 @@
 });
   </script>
   <!-- End Embed API -->
-  
+
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -56,9 +56,8 @@
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-<div class="dashboard">
-  <figure id="chart-container"></figure>
-</div>
+<div id="chart-1-container"></div>
+<div id="chart-2-container"></div>
 
   <a class="cv-btn" href="cv.html"></a>
 
@@ -83,36 +82,65 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   gapi.analytics.ready(function() {
 
-     gapi.analytics.auth.authorize({
-       'serverAuth': {
-         'access_token': '{{ ACCESS_TOKEN_FROM_SERVICE_ACCOUNT }}'
-       }
-     });
-
-
     /**
-     * Create a new DataChart instance with the given query parameters
-     * and Google chart options. It will be rendered inside an element
-     * with the id "chart-container".
+     * Authorize the user with an access token obtained server side.
      */
-    var dataChart = new gapi.analytics.googleCharts.DataChart({
-      query: {
-        'ids': 'ga:166842679',
-        'metrics': 'ga:sessions',
-        'dimensions': 'ga:date',
-        'start-date': '30daysAgo',
-        'end-date': 'yesterday'
-      },
-      chart: {
-        container: 'chart-container',
-        type: 'LINE',
-        options: {
-          width: '100%'
-        }
+    gapi.analytics.auth.authorize({
+      'serverAuth': {
+        'access_token': '{{ ACCESS_TOKEN_FROM_SERVICE_ACCOUNT }}'
       }
     });
 
-    dataChart.execute();
+
+    /**
+     * Creates a new DataChart instance showing sessions over the past 30 days.
+     * It will be rendered inside an element with the id "chart-1-container".
+     */
+    var dataChart1 = new gapi.analytics.googleCharts.DataChart({
+      query: {
+        'ids': 'ga:100367422', // <-- Replace with the ids value for your view.
+        'start-date': '30daysAgo',
+        'end-date': 'yesterday',
+        'metrics': 'ga:sessions,ga:users',
+        'dimensions': 'ga:date'
+      },
+      chart: {
+        'container': 'chart-1-container',
+        'type': 'LINE',
+        'options': {
+          'width': '100%'
+        }
+      }
+    });
+    dataChart1.execute();
+
+
+    /**
+     * Creates a new DataChart instance showing top 5 most popular demos/tools
+     * amongst returning users only.
+     * It will be rendered inside an element with the id "chart-3-container".
+     */
+    var dataChart2 = new gapi.analytics.googleCharts.DataChart({
+      query: {
+        'ids': 'ga:100367422', // <-- Replace with the ids value for your view.
+        'start-date': '30daysAgo',
+        'end-date': 'yesterday',
+        'metrics': 'ga:pageviews',
+        'dimensions': 'ga:pagePathLevel1',
+        'sort': '-ga:pageviews',
+        'filters': 'ga:pagePathLevel1!=/',
+        'max-results': 7
+      },
+      chart: {
+        'container': 'chart-2-container',
+        'type': 'PIE',
+        'options': {
+          'width': '100%',
+          'pieHole': 4/9,
+        }
+      }
+    });
+    dataChart2.execute();
 
   });
   </script>
