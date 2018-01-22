@@ -1,4 +1,7 @@
 body{background: #222;}
+
+/* index usage */
+
 .like-container{filter: url('#filter');}
 .like-cnt{
   position: absolute;
@@ -20,6 +23,16 @@ body{background: #222;}
   top:55%;
   margin-left: -8px;
   color: #fff;
+  z-index:999;
+}
+
+#ref-cnt{
+  cursor: pointer;
+  position:absolute;
+  left:50%;
+  bottom:10px;
+  z-index:999;
+  color: #3b5998;
 }
 
 .like-btn{
@@ -54,6 +67,61 @@ body{background: #222;}
 
 ::-moz-selection { background: transparent;}
 ::selection {background: transparent;}
+
+/*metrics formatting*/
+.back-metrics{
+  width: 40%;
+  height: 300px;
+  background-color: #fff;
+  position:absolute;
+  top:5%;
+}
+#metrics-left{
+margin-left: 5%;
+}
+
+#metrics-right{
+  left: 55%;
+  top: 5%;
+}
+
+#metrics-view{
+  height: 80%;
+  width: 99%;
+  position:absolute;
+  top:55%;
+  z-index: 9;
+
+}
+/* cv usage */
+
+
+
+.cv-content{
+  color: #fff;
+  padding-left: 25%;
+  padding-right: 25%;
+  padding-top: 10%;
+
+}
+
+#title-name{
+  text-align: center;
+  font-size: 22pt;
+}
+
+#subtitle{
+  text-decoration:underline;
+  font-weight:bold;
+}
+
+#bold-title{
+  font-weight:bold;
+
+}
+
+
+
 
 /*
 Icomoon icon-related content

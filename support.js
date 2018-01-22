@@ -1,7 +1,7 @@
-var click_status = false;
 var check_status = false;
 var like_cnt = $("#like-cnt");
 var like_parent = $(".like-container");
+var mon_parent = $(".money-container");
 
 var burst = new mojs.Burst({
   parent: like_parent,
@@ -18,16 +18,37 @@ var burst = new mojs.Burst({
   }
 });
 
+var burst_mon = new mojs.Burst({
+  parent: mon_parent,
+  radius: {20: 60 },
+  count: 15,
+  angle: {0:30},
+
+  children: {
+    delay: 250,
+    duration: 700,
+    radius:{10: 0},
+    fill: ['#ddca7e'],
+    easing: mojs.easing.bezier(.08,.69,.39,.97)
+  }
+});
+
+$('#mon-cnt').click(function(){
+  document.getElementById("mon-cnt").style.color = "#ddca7e";
+  burst_mon.replay();
+});
+
 $("#like-cnt").click(function(){
   var t1 = new TimelineLite();
   var t2 = new TimelineLite();
 
+
   $('#p-metrics').toggle('fast', function() {
     // Animation complete.
-  });
-
-  $('#mon-cnt').click(function(){
-    document.getElementById("mon-cnt").style.color = "#ddca7e";
+    document.getElementById("metrics-view").scrollIntoView({
+      block: "start",
+      behavior: "smooth"
+    });
   });
 
   if(!check_status){
@@ -38,11 +59,6 @@ $("#like-cnt").click(function(){
 //    t1.timeScale(5);
     check_status=true;
 
-//    display pirate metrics content
-    click_status=true;
-
-    //circleShape.replay();
-    burst.replay();
   }
   else{
     t1.to(like_cnt, 1, {scale:1})
@@ -51,4 +67,4 @@ $("#like-cnt").click(function(){
     check_status=false;
   }
 
-})
+});
