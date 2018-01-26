@@ -83,6 +83,14 @@ body{background: #222;}
   top:30px;
 }
 
+#abrv{
+  float:left;
+}
+
+#descpt{
+  float:left;
+}
+
 #metrics-left{
 margin-left: 5%;
 }
