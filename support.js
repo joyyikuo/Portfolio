@@ -62,7 +62,7 @@ $("#like-cnt").click(function(){
   }
   else{
     t1.to(like_cnt, 1, {scale:1})
-      .to(like_cnt, 1, {scale:1, background: 'rgba(255,255,255,0.3)', ease: Power4.easeOut});
+      .to(like_cnt, 1, {scale:1, background: 'rgba(20,20,20,0.3)', ease: Power4.easeOut});
     t1.timeScale(7);
     check_status=false;
   }
