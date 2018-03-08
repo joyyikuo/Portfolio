@@ -26,6 +26,10 @@ body{background: #FFF;}
   z-index:999;
 }
 
+li{
+  list-style: none;
+}
+
 #ref-cnt{
   cursor: pointer;
   position:absolute;
@@ -83,18 +87,28 @@ body{background: #FFF;}
   top:30px;
 }
 
+#sec1{
+  display: flex;
+  height: 50px;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 #abrv{
   float:left;
 }
 
 #textfield{
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-left: 10%;
+  margin-right: 10%;
+
 }
 
 #descpt{
   padding-left: 5%;
   padding-right: 5%;
+
 }
 
 #metrics-left{
