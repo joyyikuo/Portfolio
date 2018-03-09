@@ -134,6 +134,12 @@ margin-left: 5%;
   left: 20px;
   top: 40px;
 }
+
+.dashboard{
+  display: block;
+  width: 1020px;
+  margin: auto;
+}
 /* cv usage */
 
 
@@ -147,6 +153,24 @@ body{
   font-weight: 300;
   font-style: normal;
 
+}
+.back-button{
+  width: 200px;
+  height: 45px;
+  position: absolute;
+  margin-left: -100px;
+  left:50%;
+  background: url('src/back_button.png') no-repeat;
+  display:inline-block;
+}'
+
+.back-button:hover{
+  width: 200px;
+  height: 45px;
+  position: absolute;
+  left:50%;
+  background: url('src/back_button_hover.png') no-repeat;
+  display:inline-block;
 }
 
 h1{
