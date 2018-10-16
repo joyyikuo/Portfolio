@@ -2,28 +2,40 @@ body{background: #FFF;}
 
 /* index usage */
 
-.like-container{filter: url('#filter');}
+.like-container{
+  filter: url('#filter');
+  padding-top: 30%;
+  left: 50%
+}
+
 .like-cnt{
   position: absolute;
   cursor: pointer;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);     background: rgba(20,20,20,0.3);     width: 60px;
+  transform: translate(-50%, -50%);
+  background: rgba(20,20,20,0.3);
+  width: 60px;
   height: 60px;
   border-radius: 40%;
   text-align: center;
   line-height: 75px;
-  z-index: 10;
+  z-index: ;
 }
 
 #mon-cnt{
   cursor: pointer;
   position:absolute;
   left:50%;
-  top:55%;
+  top:49%;
   margin-left: -8px;
   color: #000;
   z-index:999;
+}
+
+.money-container{
+  z-index:999;
+  top: 55%
 }
 
 li{
@@ -56,6 +68,7 @@ li{
   top: 35%;
   background: url('src/cv_button_g.png') no-repeat;
   display: inline-block;
+  z-index: 1000;
 
 }
 
@@ -158,7 +171,7 @@ body{
   padding-left: 22%;
   padding-right: 22%;
   padding-top: 5%;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   font-style: normal;
 }
@@ -194,7 +207,7 @@ body{
 .half-c{
   width:47.5%;
   height:auto;
-  min-height: 200px;
+  min-height: 240px;
   margin-top: 20px;
   margin-bottom: 10px;
   display: block;
