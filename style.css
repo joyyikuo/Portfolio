@@ -27,7 +27,7 @@ body{background: #FFF;}
   cursor: pointer;
   position:absolute;
   left:50%;
-  top:49%;
+  top:50%;
   margin-left: -8px;
   color: #000;
   z-index:999;
@@ -79,6 +79,28 @@ li{
   left:50%;
   top: 35%;
   background: url('src/cv_button_hover.png') no-repeat;
+  display: inline-block;
+}
+
+.tasty-btn{
+  width:380px;
+  height:53px;
+  margin-left: -183px;
+  position: absolute;
+  left:50%;
+  top: 45%;
+  background: url('src/tasty_button.png') no-repeat;
+  display: inline-block;
+
+}
+
+.tasty-btn:hover{
+  width:380px;
+  height:53px;
+  position: absolute;
+  left:50%;
+  top: 45%;
+  background: url('src/tasty_button_hover.png') no-repeat;
   display: inline-block;
 }
 
