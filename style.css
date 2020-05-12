@@ -1,5 +1,14 @@
 body{background: #FFF;}
 
+@font-face {
+    font-family: 'adam_boldbold';
+    src: url('fonts/adam-bold-webfont.woff2') format('woff2'),
+         url('fonts/adam-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 /* index usage */
 
 .like-container{
@@ -60,47 +69,51 @@ li{
 }
 
 .cv-btn{
-  width:379px;
-  height:52px;
   margin-left: -183px;
   position: absolute;
   left:50%;
   top: 35%;
-  background: url('src/cv_button_g.png') no-repeat;
+  font-family: 'adam_boldbold';
+  font-size: 30pt;
+  color: grey;
+  text-decoration: none;
   display: inline-block;
   z-index: 1000;
 
 }
 
 .cv-btn:hover{
-  width:379px;
-  height:52px;
   position: absolute;
   left:50%;
   top: 35%;
-  background: url('src/cv_button_hover.png') no-repeat;
+  font-family: 'adam_boldbold';
+  font-size: 30pt;
+  color: black;
+  text-decoration: none;
   display: inline-block;
 }
 
 .tasty-btn{
-  width:380px;
-  height:53px;
   margin-left: -183px;
   position: absolute;
   left:50%;
   top: 45%;
-  background: url('src/tasty_button.png') no-repeat;
+  font-family: 'adam_boldbold';
+  font-size: 30pt;
+  color: grey;
+  text-decoration: none;
   display: inline-block;
 
 }
 
 .tasty-btn:hover{
-  width:380px;
-  height:53px;
   position: absolute;
   left:50%;
   top: 45%;
-  background: url('src/tasty_button_hover.png') no-repeat;
+  font-family: 'adam_boldbold';
+  font-size: 30pt;
+  color: black;
+  text-decoration: none;
   display: inline-block;
 }
 
@@ -198,19 +211,19 @@ body{
   font-style: normal;
 }
 .back-btn{
-  width: 200px;
-  height: 45px;
-  margin-left: -100px;
-
+  font-family: 'adam_boldbold';
+  font-size: 20pt;
+  color: grey;
+  text-decoration: none;
   position:absolute;
-  left: 50%;
-  background: url('src/back_button.png') no-repeat;
   display:inline-block;
 }
 
 .back-btn:hover{
-  width: 200px;
-  background: url('src/back_button_hover.png') no-repeat;
+  font-family: 'adam_boldbold';
+  font-size: 20pt;
+  color: black;
+  text-decoration: none;
   display:inline-block;
 }
 
@@ -309,9 +322,12 @@ p{
 #cv-head{
   display: block;
   position:static;
-  height:50px;
-  width:auto;
-  margin: 0 auto;
+  font-family: 'adam_boldbold';
+  font-size: 20pt;
+  color: black;
+  text-align: center;
+  margin-top: 20px;
+  width: auto;
 }
 
 
