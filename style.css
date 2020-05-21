@@ -117,6 +117,30 @@ li{
   display: inline-block;
 }
 
+.tfidf-btn{
+  margin-left: -183px;
+  position: absolute;
+  left:50%;
+  top: 55%;
+  font-family: 'adam_boldbold';
+  font-size: 30pt;
+  color: grey;
+  text-decoration: none;
+  display: inline-block;
+
+}
+
+.tfidf-btn:hover{
+  position: absolute;
+  left:50%;
+  top: 55%;
+  font-family: 'adam_boldbold';
+  font-size: 30pt;
+  color: black;
+  text-decoration: none;
+  display: inline-block;
+}
+
 ::-moz-selection { background: transparent;}
 ::selection {background: transparent;}
 
