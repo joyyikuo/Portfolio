@@ -72,7 +72,7 @@ li{
   margin-left: -183px;
   position: absolute;
   left:50%;
-  top: 35%;
+  top: 30%;
   font-family: 'adam_boldbold';
   font-size: 30pt;
   color: grey;
@@ -85,7 +85,7 @@ li{
 .cv-btn:hover{
   position: absolute;
   left:50%;
-  top: 35%;
+  top: 30%;
   font-family: 'adam_boldbold';
   font-size: 30pt;
   color: black;
@@ -97,7 +97,7 @@ li{
   margin-left: -183px;
   position: absolute;
   left:50%;
-  top: 45%;
+  top: 40%;
   font-family: 'adam_boldbold';
   font-size: 30pt;
   color: grey;
@@ -109,7 +109,7 @@ li{
 .tasty-btn:hover{
   position: absolute;
   left:50%;
-  top: 45%;
+  top: 40%;
   font-family: 'adam_boldbold';
   font-size: 30pt;
   color: black;
@@ -121,7 +121,7 @@ li{
   margin-left: -183px;
   position: absolute;
   left:50%;
-  top: 55%;
+  top: 50%;
   font-family: 'adam_boldbold';
   font-size: 30pt;
   color: grey;
@@ -133,7 +133,7 @@ li{
 .tfidf-btn:hover{
   position: absolute;
   left:50%;
-  top: 55%;
+  top: 50%;
   font-family: 'adam_boldbold';
   font-size: 30pt;
   color: black;
@@ -145,7 +145,7 @@ li{
   margin-left: -183px;
   position: absolute;
   left:50%;
-  top: 65%;
+  top: 60%;
   font-family: 'adam_boldbold';
   font-size: 30pt;
   color: grey;
@@ -157,7 +157,31 @@ li{
 .omu-btn:hover{
   position: absolute;
   left:50%;
-  top: 65%;
+  top: 60%;
+  font-family: 'adam_boldbold';
+  font-size: 30pt;
+  color: black;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.corenlp-btn{
+  margin-left: -183px;
+  position: absolute;
+  left:50%;
+  top: 70%;
+  font-family: 'adam_boldbold';
+  font-size: 30pt;
+  color: grey;
+  text-decoration: none;
+  display: inline-block;
+
+}
+
+.corenlp-btn:hover{
+  position: absolute;
+  left:50%;
+  top: 70%;
   font-family: 'adam_boldbold';
   font-size: 30pt;
   color: black;
@@ -334,7 +358,7 @@ body{
   float:right;
 }
 
-.full-c{
+.full-c-nlp{
   width:100%;
   height:auto;
   display: inline-block;
@@ -346,6 +370,20 @@ body{
   border-radius: 10px;
   -moz-border-radius: 10px;
 }
+
+.full-c-nlp{
+  width:100%;
+  height:auto;
+  display: inline-block;
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  background: rgba(256,256,256,1);
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+}
+
 h1{
   color: #333333;
   font-size: 22pt;
@@ -385,6 +423,16 @@ p{
   width: auto;
 }
 
+#corenlp-head{
+  display: block;
+  position:static;
+  font-family: 'adam_boldbold';
+  font-size: 30pt;
+  color: black;
+  margin-top: 20px;
+  margin-left: 20px;
+  width: auto;
+}
 
 
 

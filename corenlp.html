@@ -1,0 +1,103 @@
+<head>
+
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <meta content="utf-8" http-equiv="encoding">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111533283-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-111533283-1');
+  </script>
+
+  <title>CoreNLP Annotator on r/StockMarket</title>
+
+  <link rel="stylesheet" type="text/css" href="style.css"></link>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Roboto:300,400,700" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div id="back-parent">
+  <a class="back-btn" href="index.html">BACK TO PORTFOLIO</a>
+</div>
+
+<div id="divider"></div>
+
+<div class='tableauPlaceholder' id='viz1602523346030' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;6X&#47;6X9BTKZWF&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='path' value='shared&#47;6X9BTKZWF' /> <param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;6X&#47;6X9BTKZWF&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1602523346030');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.minWidth='800px';vizElement.style.maxWidth='1200px';vizElement.style.width='100%';vizElement.style.minHeight='587px';vizElement.style.maxHeight='887px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.minWidth='800px';vizElement.style.maxWidth='1200px';vizElement.style.width='100%';vizElement.style.minHeight='587px';vizElement.style.maxHeight='887px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.height='1177px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+
+<div class="full-c-nlp" id="workexp">
+  <p id="corenlp-head">SEMI-AUTOMATED ANNOTATION WITH CORENLP ON R/STOCKMARKET DATA FROM REDDIT</p>
+    <div class="content-container">
+      <h1>
+        Introduction
+      </h1>
+
+      <p>
+        2020 was a wild ride so far, and so was the US stock market ever since the major stock plunge during March. However, one growing trend of the market that remains steady is how the
+        market is becoming <a href = 'https://www.nytimes.com/2020/05/10/business/stock-market-economy-coronavirus.html'>increasingly detached from the economy</a>. As the second wave of COVID
+        hits the United States, it feels like what the people are going through resembles very little of what the market is going through. Some speculate that this is due to the forward-looking
+        nature of the market, while others <a href='https://financhill.com/blog/investing/robinhood-effect-on-stock-market'>explain the irrational movements with the increase of Robinhood
+        traders during the lockdown. </a>
+      </p>
+
+      <p>
+        Reddit, a popular online discussion site with dedicated communities for all interests and topics, is home to many individual investors trying to share and attain information for their
+        portfolio. Serving as the birthplace of <a href='https://www.bloomberg.com/news/articles/2020-02-26/reddit-s-profane-greedy-traders-are-shaking-up-the-stock-market'> communities such as
+        r/wallstreetbets</a>, Reddit contains a lot of valuable information on individual investors' sentiment, thoughts, and topics of interest. To observe the potential relationships between
+        discussion topics on Reddit communities and the stock market, we sample r/StockMarket, a relatively news-driven community to explore against the Vanguard Total Stock Market Index Fund (VTI).
+        Overall, it is interesting to see how community sentiment via the top post of the day seem to be a day or two time-step ahead of market reactions, but with the very limited data via sentiment
+        analysis on the most popular post each day (showcased via the very narrow topics covered in each post), more investigation will be needed before any conclusions about the relationship between
+        Reddit community sentiment/discussion topics and stock market performance can be drawn.
+      </p>
+
+      <h1>
+        Methodology and Toolkit
+      </h1>
+
+      <h3>Data Collection</h3>
+      <p>
+        Top posts of r/StockMarket from 2nd of September to 30th of September 2020 were collected via the Python Reddit API Wrapper (PRAW). While collecting all posts instead of just top posts
+        during the period would be a much better representation of the community sentiment and distribution of interest, the semi-automated nature of the triples extraction makes it time-consuming
+        to process all posts during this period.
+      </p>
+
+      <p>
+        While some <a href = 'https://www.reddit.com/r/dataisbeautiful/comments/iw6831/wallstreetbets_is_reddits_largest_stock_trading/'>analysis uses S&P 500</a> as reference point for market performance,
+        this analysis adopts the VTI index for exposure to medium and small-cap stocks. Furthermore, topic stocks such as TSLA may not always be included in S&P 500, which makes VTI a preferable
+        index for analysis against investment topics. The price and trading volume data were collected via the Yahoo Finance API.
+      </p>
+
+      <h3>Triples Extraction and Sentiment Annotation via CoreNLP</h3>
+      <p>
+        The majority of code utilised for the semi-automatic annotation was forked from the <a href='https://github.com/TimKettenacker/puffin'>puffin project </a> as a part of
+        <a href='https://arxiv.org/ftp/arxiv/papers/1804/1804.04838.pdf'>this paper on Ontology-Based Dialogue Management System by Duygu Altinok</a>. The puffin project covered processing of Semantic
+        Triple extraction via the CoreNLP API from raw text, with the inclusion of a manual review process to select desired triples to keep in the case of automated generation producing various possibilities
+        of triples for the same sentence to prevent leaving out key descriptive information. The code was slightly altered for this analysis to include sentiment analysis via the Sentiment Annotator
+        from the CoreNLP API and to be able to take each top post from the PRAW API output as documents for processing.
+      </p>
+
+      <h1>
+        Observations and Challenges
+      </h1>
+
+      <p>
+        While it was interesting to observe the changes in sentiment on a stock market subreddit against the changes in the actual stock market, this analysis only serves as a baby's first step
+        for showcasing the possibilities of text mining for financial analysis. Conclusions on relationships between variables are hard to make due to the short time-span covered and the representativeness
+        of a single post from a single subreddit, even if it is the top post of the day.
+      </p>
+
+      <p>
+        The multi-media nature of Reddit is another challenge for this analysis, as many posts not only link to other text sources (such as news sites or other Reddit posts) but also to images/infographics with
+        minimal text data available via the post title. Furthermore, while objects of the triples extracted for each post can provide some indication on the overall topic discussed in each post (which are visualised),
+        the representation is lacklustre without the subject and the predicate, of which contains a lot more sentiment information but would be best visualised in a graphical representation (unavailable with Tableau, sadly).
+      </p>
+
+    </div>
+</div>
+
+</body>
